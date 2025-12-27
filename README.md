@@ -100,11 +100,15 @@ Eliminar un show puede borrar también la información del directo
 
 ## 🐳 Ejercicio 4: Implementación con Docker
 
+• Capturas de pantalla de contenedores en ejecución
+
+
+• Evidencia de normalización exitosa dentro de Docker
 
 
 
  
- 📁
+
 # 📁 **Estructura del Proyecto**
 
 ```
