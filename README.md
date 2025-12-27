@@ -42,7 +42,7 @@ Eliminar un show puede borrar también la información del directo
 | show_id| type | title | director | cast | country | date_added | release_year | rating | duration | listed_in | description |
 |--------|------|-------|----------|------|---|--------|------|-------|----------|------|---|
 
-**Estructura resultante (tablas en 1FN)**
+**Estructura resultante**
 
 | show_id| type | title | date_added | release_year | rating | duration | description |
 |--------|------|---------|------|---|--------|------|-------|
@@ -96,9 +96,9 @@ Eliminar un show puede borrar también la información del directo
 | s5 | Romantic TV Shows |
 | s5 | TV Comedies |
  
-## 🎯 Ejercicio 3: Automatización del Proceso de Normalización
+## ⚙️ Ejercicio 3: Automatización del Proceso de Normalización
 
-
+## 🐳 Ejercicio 4: Implementación con Docker
 
 
 
