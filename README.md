@@ -177,7 +177,6 @@ Eliminar el último producto de una factura borra también la información del c
 
 | InvoiceNo | StockCode | Description | Quantity | InvoiceDate | UnitPrice | CustomerID | Country |
 |----------|-----------|-------------|----------|-------------|-----------|------------|---------|
-
 | 536374 | 21258 | VICTORIAN SEWING BOX LARGE | 32 | 12/01/2010  09:09:00 a. m. | 10.95 | 15100 | United Kingdom |
 
 **Ejemplo de datos en la estructura resultante**
@@ -186,21 +185,18 @@ Eliminar el último producto de una factura borra también la información del c
 
 | InvoiceNo | InvoiceDate | InvoiceHour | CustomerID | Country |
 |--------|--------|---------|--------|-------|
-
 | 536374 | 12/01/2010 | 09:09:00 | 15100 | United Kingdom |
 
 ### Tabla productos
 
 | StockCode |  Description |
 |------|-------|
-
 | 21258 | VICTORIAN SEWING BOX LARGE |
 
 ### Tabla detalleVenta
 
 | InvoiceNo | StockCode | Quantity | UnitPrice |
 |------|---|------|---|
-
 | 536374 | 21258 | 32 | 10.95 |
  
 ## ⚙️ Ejercicio 3: Automatización del Proceso de Normalización
@@ -213,51 +209,47 @@ Eliminar el último producto de una factura borra también la información del c
 • Evidencia de normalización exitosa dentro de Docker
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
 # 📁 **Estructura del Proyecto**
 
 ```
-mi_restaurante/
+normalizacion-db/
 │
-├── app/
-│   ├── __init__.py
-│   ├── main.py            # Rutas Flask
-│   ├── database.py        # Conexión ORM (SQLAlchemy)
-│   ├── models.py          # Modelos ORM
-│   ├── static/
-│   │   └── style.css
-│   └── templates/
-│       ├── base.html
-│       ├── index.html
-│       ├── login.html
-│       ├── register.html
-│       ├── menu.html
-│       ├── mi_pedido.html
-│       └── dashboard.html
+├── data/
+│   ├── raw/                    # Datasets originales
+│   │   ├── dataset1.csv
+│   │   ├── dataset2.csv
+│   │   └── dataset3.csv
+│   │
+│   └── normalized/             # Datos normalizados exportados
+│       ├── dataset1/
+│       ├── dataset2/
+│       └── dataset3/
 │
-├── .env
-├── .gitignore
-├── requirements.txt
-└── README.md
+├── scripts/
+│   ├── normalize_dataset1.py   # Script específico dataset 1
+│   ├── normalize_dataset2.py   # Script específico dataset 2
+│   ├── normalize_dataset3.py   # Script específico dataset 3
+│   └── utils.py                # Funciones auxiliares reutilizables
+│
+├── sql/
+│   ├── ddl/                    # Scripts de creación de tablas
+│   │   ├── dataset1_schema.sql
+│   │   ├── dataset2_schema.sql
+│   │   └── dataset3_schema.sql
+│   │
+│   └── dml/                    # Scripts de inserción de datos
+│       ├── dataset1_data.sql
+│       ├── dataset2_data.sql
+│       └── dataset3_data.sql
+│
+├── docs/
+│   ├── analisis_original.md
+│   ├── proceso_normalizacion.md
+│   └── diagramas_er/
+│
+├── requirements.txt            # Dependencias Python
+├── README.md                   # Documentación del proyecto
+└── Dockerfile                  # Opcional para Docker
 ```
