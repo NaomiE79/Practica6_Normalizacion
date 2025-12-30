@@ -147,6 +147,14 @@ normalizacion-db/
 
 ## 🐳 Ejercicio 4: Implementación con Docker
 
+Nombre de mi contenedor: db_final
+
+![Texto alternativo para la imagen](docs/imagenes/contenedor.png)
+
+El nombre de la imagen en Docker es: mi_proyecto_db
+
+![Texto alternativo para la imagen](docs/imagenes/imagen_docker.png)
+
 ![Texto alternativo para la imagen](docs/imagenes/install_pandas.png)
 
 ![Texto alternativo para la imagen](docs/imagenes/corre_py1.png)
