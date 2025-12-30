@@ -1,8 +1,8 @@
 # Práctica 6 Normalización de bases de datos
+
+# 🖼 Dataset 1: Netflix Movies and TV Shows
+
 ## 🎯 Ejercicio 1: Selección y Análisis de Datasets
-
-### 🖼 Dataset 1: Netflix Movies and TV Shows
-
 1. Estructura original:
 Columnas: 12
 Registros: 8807
@@ -104,6 +104,67 @@ Eliminar un show puede borrar también la información del directo
 
 
 • Evidencia de normalización exitosa dentro de Docker
+
+```
+
+# 🖼 Dataset 2: E-commerce Sales Data
+
+## 🎯 Ejercicio 1: Selección y Análisis de Datasets
+
+1. Estructura original:
+Columnas: 8
+Registros: 25900
+
+ Tipos de datos presentes:
+INTEGER
+VARCHAR
+DATE
+TIME
+FLOAT
+
+Ejemplo de 5 registros representativos:
+
+<img width="1919" height="878" alt="image" src="https://github.com/user-attachments/assets/acc0bc9e-596e-44e7-a424-a7ae6c686204" />
+
+2. Identificación de problemas de normalización:
+Columna InvoiceDate tienen múltiples valores (violación de 1FN)
+Atributos como InvoiceDate, CustomerID, Country dependen solo de InvoiceNo, no de StockCode (violación de 2FN)
+Country depende de CustomerID, que depende de InvoiceNo (violación de 3FN)
+Redundancia de datos en Quantity, InvoiceDate, UnitPrice, Country y customerID
+Posibles anomalías (inserción, actualización, eliminación)
+No se puede insertar un cliente sin compra
+Actualizar el país implica modificar varias filas
+Eliminar el último producto de una factura borra también la información del cliente
+
+3. Diagrama de dependencias funcionales:
+
+
+          |---------|
+          | show_id |
+          |---------|
+               ↓
+          |------+-- ----+--------+------+--------+----------+---------+--------+----------+-----------+-------------|
+          | type | title |director| cast |country | date_add | release | rating | duration | listed_in | description |
+          |------+-------+--------+------+--------+----------+---------+--------+----------+-----------+-------------|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
