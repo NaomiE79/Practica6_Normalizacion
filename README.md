@@ -138,16 +138,79 @@ Eliminar el último producto de una factura borra también la información del c
 
 3. Diagrama de dependencias funcionales:
 
+# IMAGEN 
 
-          |---------|
-          | show_id |
-          |---------|
-               ↓
-          |------+-- ----+--------+------+--------+----------+---------+--------+----------+-----------+-------------|
-          | type | title |director| cast |country | date_add | release | rating | duration | listed_in | description |
-          |------+-------+--------+------+--------+----------+---------+--------+----------+-----------+-------------|
+## 🎯 Ejercicio 2: Proceso de Normalización Manual
+
+**Estructura original**
+
+| InvoiceNo | StockCode | Description | Quantity | InvoiceDate | UnitPrice | CustomerID | Country |
+|----------|-----------|-------------|----------|-------------|-----------|------------|---------|
+
+**Estructura resultante**
+
+### Tabla factura
+
+| InvoiceNo | InvoiceDate | InvoiceHour | CustomerID | Country |
+|--------|--------|---------|--------|-------|
+
+### Tabla productos
+
+| StockCode |  Description |
+|------|-------|
+
+### Tabla detalleVenta
+
+| InvoiceNo | StockCode | Quantity | UnitPrice |
+|------|---|------|---|
+
+**Ejemplo de datos en la estructura original**
+
+| show_id| type | title | director | cast | country | date_added | release_year | rating | duration | listed_in | description |
+|--------|------|-------|----------|------|---|--------|------|-------|----------|------|---|
+
+| s5 | TV Show | Kota Factory	| Mayur More | Jitendra Kumar, Ranjan Raj, Alam Khan, Ahsaas Channa, Revathi Pillai, Urvi Singh, Arun Kumar | India | September 24, 2021 | 2021 | TV-MA	| 2 Seasons | International TV Shows, Romantic TV Shows, TV Comedies | In a city of coaching centers known to train Indiaâ€™s finest collegiate minds, an earnest but unexceptional student and his friends navigate campus life |
+
+**Ejemplo de datos en la estructura resultante**
+
+| show_id| type | title | date_added | release_year | rating | duration | description |
+|--------|------|---------|------|---|--------|------|-------|
+|s5 | TV Show | Kota Factory	| September 24, 2021 | 2021 | TV-MA	| 2 Seasons | In a city of coaching centers known to train Indiaâ€™s finest collegiate minds, an earnest but unexceptional student and his friends navigate campus life |
+
+| show_id|  director |
+|------|-------|
+|s5 | Mayur More |
+
+| show_id| cast | 
+|------|---|
+| s5 | Jitendra Kumar |
+| s5 | Ranjan Raj |
+| s5 | Alam Khan |
+| s5 | Ahsaas Channa |
+| s5 | Revathi Pillai |
+| s5 | Urvi Singh |
+| s5 | Arun Kumar |
+
+| show_id| country | 
+|------|---|
+| s5 | India |
+
+| show_id| listed_in | 
+|--------|------|
+| s5 | International TV Shows |
+| s5 | Romantic TV Shows |
+| s5 | TV Comedies |
+ 
+## ⚙️ Ejercicio 3: Automatización del Proceso de Normalización
+
+## 🐳 Ejercicio 4: Implementación con Docker
+
+• Capturas de pantalla de contenedores en ejecución
 
 
+• Evidencia de normalización exitosa dentro de Docker
+
+```
 
 
 
