@@ -16,9 +16,7 @@ DATE
 TEXT
 ```
 
-Ejemplo de 5 registros representativos:
-
-<img width="1919" height="878" alt="image" src="https://github.com/user-attachments/assets/acc0bc9e-596e-44e7-a424-a7ae6c686204" />
+![Ejemplo de 5 registros representativos:](docs/imagenes/img1.png)
 
 ```
 2. Identificación de problemas de normalización:
@@ -103,14 +101,57 @@ Eliminar un show puede borrar también la información del directo
  
 ## ⚙️ Ejercicio 3: Automatización del Proceso de Normalización
 
+# 📁 **Estructura del Proyecto**
+
+```
+normalizacion-db/
+│
+├── data/
+│   ├── raw/                    # Datasets originales
+│   │   ├── dataset1.csv
+│   │   ├── dataset2.csv
+│   │   └── dataset3.csv
+│   │
+│   └── normalized/             # Datos normalizados exportados
+│       ├── dataset1/
+│       ├── dataset2/
+│       └── dataset3/
+│
+├── scripts/
+│   ├── normalize_dataset1.py   # Script específico dataset 1
+│   ├── normalize_dataset2.py   # Script específico dataset 2
+│   ├── normalize_dataset3.py   # Script específico dataset 3
+│   └── utils.py                # Funciones auxiliares reutilizables
+│
+├── sql/
+│   ├── ddl/                    # Scripts de creación de tablas
+│   │   ├── dataset1_schema.sql
+│   │   ├── dataset2_schema.sql
+│   │   └── dataset3_schema.sql
+│   │
+│   └── dml/                    # Scripts de inserción de datos
+│       ├── dataset1_data.sql
+│       ├── dataset2_data.sql
+│       └── dataset3_data.sql
+│
+├── docs/
+│   ├── analisis_original.md
+│   ├── proceso_normalizacion.md
+│   └── diagramas_er/
+│
+├── requirements.txt            # Dependencias Python
+├── README.md                   # Documentación del proyecto
+└── Dockerfile                  # Opcional para Docker
+
+```
+
 ## 🐳 Ejercicio 4: Implementación con Docker
 
-• Capturas de pantalla de contenedores en ejecución
+![Texto alternativo para la imagen](docs/imagenes/install_pandas.png)
 
+![Texto alternativo para la imagen](docs/imagenes/corre_py1.png)
 
-• Evidencia de normalización exitosa dentro de Docker
-
-
+![Texto alternativo para la imagen](docs/imagenes/carpeta_normalizado1_llena.png)
 
 # 🖼 Dataset 2: E-commerce Sales Data
 
@@ -131,7 +172,7 @@ FLOAT
 
 Ejemplo de 5 registros representativos:
 
-<img width="1919" height="878" alt="image" src="https://github.com/user-attachments/assets/acc0bc9e-596e-44e7-a424-a7ae6c686204" />
+![Texto alternativo para la imagen](docs/imagenes/img2.png)
 
 ```
 2. Identificación de problemas de normalización:
@@ -147,7 +188,7 @@ Eliminar el último producto de una factura borra también la información del c
 
 3. Diagrama de dependencias funcionales:
 
-# IMAGEN 
+![Texto alternativo para la imagen](docs/imagenes/diagrama2.png)
 
 ## 🎯 Ejercicio 2: Proceso de Normalización Manual
 
@@ -198,58 +239,10 @@ Eliminar el último producto de una factura borra también la información del c
 | InvoiceNo | StockCode | Quantity | UnitPrice |
 |------|---|------|---|
 | 536374 | 21258 | 32 | 10.95 |
- 
-## ⚙️ Ejercicio 3: Automatización del Proceso de Normalización
 
 ## 🐳 Ejercicio 4: Implementación con Docker
 
-• Capturas de pantalla de contenedores en ejecución
+![Texto alternativo para la imagen](docs/imagenes/corre_py2.png)
 
+![Texto alternativo para la imagen](docs/imagenes/carpeta_normalizado2_llena.png)
 
-• Evidencia de normalización exitosa dentro de Docker
-
-
- 
-
-# 📁 **Estructura del Proyecto**
-
-```
-normalizacion-db/
-│
-├── data/
-│   ├── raw/                    # Datasets originales
-│   │   ├── dataset1.csv
-│   │   ├── dataset2.csv
-│   │   └── dataset3.csv
-│   │
-│   └── normalized/             # Datos normalizados exportados
-│       ├── dataset1/
-│       ├── dataset2/
-│       └── dataset3/
-│
-├── scripts/
-│   ├── normalize_dataset1.py   # Script específico dataset 1
-│   ├── normalize_dataset2.py   # Script específico dataset 2
-│   ├── normalize_dataset3.py   # Script específico dataset 3
-│   └── utils.py                # Funciones auxiliares reutilizables
-│
-├── sql/
-│   ├── ddl/                    # Scripts de creación de tablas
-│   │   ├── dataset1_schema.sql
-│   │   ├── dataset2_schema.sql
-│   │   └── dataset3_schema.sql
-│   │
-│   └── dml/                    # Scripts de inserción de datos
-│       ├── dataset1_data.sql
-│       ├── dataset2_data.sql
-│       └── dataset3_data.sql
-│
-├── docs/
-│   ├── analisis_original.md
-│   ├── proceso_normalizacion.md
-│   └── diagramas_er/
-│
-├── requirements.txt            # Dependencias Python
-├── README.md                   # Documentación del proyecto
-└── Dockerfile                  # Opcional para Docker
-```
